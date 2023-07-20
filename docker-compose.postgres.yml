@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-database
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_DB=defaultdb
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - "db-data-kong-postgres:/var/lib/postgresql/data"
